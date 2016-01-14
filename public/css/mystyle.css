@@ -1,0 +1,105 @@
+#header {
+  text-align: center;
+  font-size: 24px;
+}
+#container {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 306px;
+  height:306px;
+  align-self: center;
+  position:absolute;
+}
+#row1box1 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  float:left;
+}
+#row1box2 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-left:102px;
+  float:left;
+}
+#row1box3 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-left: 204px;
+}
+#row2box1 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-top:102px;
+  float:left;
+}
+#row2box2 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-left:102px;
+  margin-top:102px;
+}
+#row2box3 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-top:102px;
+  margin-left:204px;
+}
+#row3box1 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-top:204px;
+  float:left;
+}
+#row3box2 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-top:204px;
+  margin-left:102px;
+}
+#row3box3 {
+  position:absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:100px;
+  height:100px;
+  margin-top:204px;
+  margin-left:204px;
+}
+#instructions {
+}
+#points {
+}
