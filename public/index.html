@@ -11,7 +11,8 @@
 
     <h2>Whack-a-Mole</h2>
     <div id="instructions">Click the image to gain points</div>
-    <div id="points"></div>
+    <div id="points"></div> <div id="clock"></div>
+    <button id="startButton" name="startButton">Start</button>
 
     <div id="container">
       <div id="row1box1"><div id="insidebox"></div></div> <div id="row1box2"><div id="insidebox"></div></div> <div id="row1box3"><div id="insidebox"></div></div>
@@ -22,6 +23,8 @@
     <script>
       $(document).ready(function() {
         var score = 0;
+        var myInterval = "";
+        var highScore = 0;
         function displayMole() {
           var random = Math.floor((Math.random()*9)+1);
           switch (random) {
@@ -88,62 +91,102 @@
               $('#row3box3').children().fadeOut();
               break;
             default:
-              alert('opps, there was an error getting a mole');
+              $('#row1box1').children().fadeOut();
+              $('#row1box2').children().fadeOut();
+              $('#row1box3').children().fadeOut();
+              $('#row2box1').children().fadeOut();
+              $('#row2box2').children().fadeOut();
+              $('#row2box3').children().fadeOut();
+              $('#row3box1').children().fadeOut();
+              $('#row3box2').children().fadeOut();
+              $('#row3box3').children().fadeOut();
           }
 
         }
 
-        setInterval(function() {
-          var number = displayMole();
-          setTimeout(function() {
-            hideMole(number);
-          }, 2900);
-        }, 3000);
 
+        //start Button click event
+        $('#startButton').click(function(event) {
+          endGame();
+          score = 0;
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
+
+          var myVar = setInterval(function(){ myTimer() }, 1000);
+          var timer = '00:';
+          var num = 00;
+
+          function myTimer() {
+              $("#clock").html(timer + num);
+              num += 1;
+              if (num == 31) {
+                endGame();
+              }
+          }
+
+          function endGame() {
+            clearInterval(myVar);
+            clearInterval(myInterval);
+            hideMole(0);
+            if (score > highScore) {
+              highScore = score;
+            }
+
+          }
+
+          myInterval = setInterval(function() {
+            var number = displayMole();
+            setTimeout(function() {
+              hideMole(number);
+            }, 2900);
+          }, 3000);
+        })
+
+
+        //click Events
         $('#row1box1').click(function(event) {
           $(this).children().fadeOut();
-          score++;
-          $('#points').html("Score: " + score);
+          if (number == 1) {score++;}
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row1box2').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row1box3').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row2box1').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row2box2').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row2box3').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row3box1').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row3box2').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row3box3').click(function(event) {
           $(this).children().fadeOut();
           score++;
-          $('#points').html("Score: " + score);
+          $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
 
       });
