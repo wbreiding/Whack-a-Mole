@@ -14,10 +14,47 @@
     <div id="points"></div>
 
     <div id="container">
-      <div id="row1box1">1</div> <div id="row1box2">2</div> <div id="row1box3">3</div>
-      <div id="row2box1">4</div> <div id="row2box2">5</div> <div id="row2box3">6</div>
-      <div id="row3box1">7</div> <div id="row3box2">8</div> <div id="row3box3">9</div>
+      <div id="row1box1"><div id="insidebox"></div></div> <div id="row1box2"><div id="insidebox"></div></div> <div id="row1box3"><div id="insidebox"></div></div>
+      <div id="row2box1"><div id="insidebox"></div></div> <div id="row2box2"><div id="insidebox"></div></div> <div id="row2box3"><div id="insidebox"></div></div>
+      <div id="row3box1"><div id="insidebox"></div></div> <div id="row3box2"><div id="insidebox"></div></div> <div id="row3box3"><div id="insidebox"></div></div>
     </div>
 
+    <script>
+      $(document).ready(function() {
+        var random = Math.floor((Math.random()*9)+1);
+        switch (random) {
+          case 1:
+            $('#row1box1').children().fadeIn();
+            break;
+          case 2:
+            $('#row1box2').children().fadeIn();
+            break;
+          case 3:
+            $('#row1box3').children().fadeIn();
+            break;
+          case 4:
+            $('#row2box1').children().fadeIn();
+            break;
+          case 5:
+            $('#row2box2').children().fadeIn();
+            break;
+          case 6:
+            $('#row2box3').children().fadeIn();
+            break;
+          case 7:
+            $('#row3box1').children().fadeIn();
+            break;
+          case 8:
+            $('#row3box2').children().fadeIn();
+            break;
+          case 9:
+            $('#row3box3').children().fadeIn();
+            break;
+          default:
+            alert('opps, there was an error getting a mole');
+        }
+
+      });
+    </script>
 </body>
 </html>
