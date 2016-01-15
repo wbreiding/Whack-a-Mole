@@ -21,38 +21,130 @@
 
     <script>
       $(document).ready(function() {
-        var random = Math.floor((Math.random()*9)+1);
-        switch (random) {
-          case 1:
-            $('#row1box1').children().fadeIn();
-            break;
-          case 2:
-            $('#row1box2').children().fadeIn();
-            break;
-          case 3:
-            $('#row1box3').children().fadeIn();
-            break;
-          case 4:
-            $('#row2box1').children().fadeIn();
-            break;
-          case 5:
-            $('#row2box2').children().fadeIn();
-            break;
-          case 6:
-            $('#row2box3').children().fadeIn();
-            break;
-          case 7:
-            $('#row3box1').children().fadeIn();
-            break;
-          case 8:
-            $('#row3box2').children().fadeIn();
-            break;
-          case 9:
-            $('#row3box3').children().fadeIn();
-            break;
-          default:
-            alert('opps, there was an error getting a mole');
+        var score = 0;
+        function displayMole() {
+          var random = Math.floor((Math.random()*9)+1);
+          switch (random) {
+            case 1:
+              $('#row1box1').children().fadeIn();
+              break;
+            case 2:
+              $('#row1box2').children().fadeIn();
+              break;
+            case 3:
+              $('#row1box3').children().fadeIn();
+              break;
+            case 4:
+              $('#row2box1').children().fadeIn();
+              break;
+            case 5:
+              $('#row2box2').children().fadeIn();
+              break;
+            case 6:
+              $('#row2box3').children().fadeIn();
+              break;
+            case 7:
+              $('#row3box1').children().fadeIn();
+              break;
+            case 8:
+              $('#row3box2').children().fadeIn();
+              break;
+            case 9:
+              $('#row3box3').children().fadeIn();
+              break;
+            default:
+              alert('opps, there was an error getting a mole');
+          }
+          return random;
         }
+
+        function hideMole(number) {
+          switch (number) {
+            case 1:
+              $('#row1box1').children().fadeOut();
+              break;
+            case 2:
+              $('#row1box2').children().fadeOut();
+              break;
+            case 3:
+              $('#row1box3').children().fadeOut();
+              break;
+            case 4:
+              $('#row2box1').children().fadeOut();
+              break;
+            case 5:
+              $('#row2box2').children().fadeOut();
+              break;
+            case 6:
+              $('#row2box3').children().fadeOut();
+              break;
+            case 7:
+              $('#row3box1').children().fadeOut();
+              break;
+            case 8:
+              $('#row3box2').children().fadeOut();
+              break;
+            case 9:
+              $('#row3box3').children().fadeOut();
+              break;
+            default:
+              alert('opps, there was an error getting a mole');
+          }
+
+        }
+
+        setInterval(function() {
+          var number = displayMole();
+          setTimeout(function() {
+            hideMole(number);
+          }, 2900);
+        }, 3000);
+
+        $('#row1box1').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row1box2').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row1box3').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row2box1').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row2box2').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row2box3').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row3box1').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row3box2').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
+        $('#row3box3').click(function(event) {
+          $(this).children().fadeOut();
+          score++;
+          $('#points').html("Score: " + score);
+        });
 
       });
     </script>
