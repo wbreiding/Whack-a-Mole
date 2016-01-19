@@ -25,6 +25,9 @@
         var score = 0;
         var myInterval = "";
         var highScore = 0;
+        var number = 0;
+        var speedUp = 0;
+        var constant = 250;
         function displayMole() {
           var random = Math.floor((Math.random()*9)+1);
           switch (random) {
@@ -133,59 +136,109 @@
 
           }
 
-          myInterval = setInterval(function() {
-            var number = displayMole();
-            setTimeout(function() {
-              hideMole(number);
-            }, 2900);
-          }, 3000);
+          playGame();
+
         })
 
+        function playGame() {
+          myInterval = setInterval(function() {
+            number = displayMole();
+            console.log(speedUp + " : " + myInterval);
+            setTimeout(function() {
+              hideMole(number);
+            }, 2900-speedUp);
+          }, 3000-speedUp);
+        }
 
         //click Events
         $('#row1box1').click(function(event) {
           $(this).children().fadeOut();
-          if (number == 1) {score++;}
+          if (number == 1) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row1box2').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 2) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row1box3').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 3) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row2box1').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 4) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row2box2').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 5) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row2box3').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 6) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row3box1').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 7) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row3box2').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 8) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
         $('#row3box3').click(function(event) {
           $(this).children().fadeOut();
-          score++;
+          if (number == 9) {
+            score++;
+            speedUp = speedUp + constant;
+            clearInterval(myInterval);
+            playGame();
+          }
           $('#points').html("Score: " + score + " - High Score: " + highScore);
         });
 
